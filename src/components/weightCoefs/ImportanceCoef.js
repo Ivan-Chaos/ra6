@@ -3,7 +3,7 @@ import DataGrid, { TextEditor } from 'react-data-grid';
 
 const columns = [
     { key: 'expertType', name: 'Типи експертів', width: 300 },
-    { key: 'absoluteCoef', name: 'Абсолютний коефіцієнт', editor: TextEditor},
+    { key: 'absoluteCoef', name: 'Абсолютний коефіцієнт'},
     { key: 'relativeCoef', name: 'Відносний коефіцієнт', editor: TextEditor }
 ];
 
@@ -14,14 +14,20 @@ const ImportanceCoef = ({setWeightCoefs}) => {
 
     
     const [rows, setRows] = useState([
-        {expertType: 'Експерти галузі', absoluteCoef: 5.4, relativeCoef: 0.55},
+        {expertType: 'Експерти галузі', absoluteCoef: 5.5, relativeCoef: 0.55},
         {expertType: 'Експерти юзабіліті', absoluteCoef: 7.8, relativeCoef: 0.78},
         {expertType: 'Експерти з програмування', absoluteCoef: 7.8, relativeCoef: 0.78},
         {expertType: 'Потенційні користувачі', absoluteCoef: 7.8, relativeCoef: 0.78},
     ]);
 
     useEffect(()=>{
+
         setWeightCoefs([...rows]);
+
+        if(!rows.every(e=>Math.abs(parseFloat(e.absoluteCoef)-parseFloat(e.relativeCoef)*10))<1){
+            setRows(rows.map(e=> {return {...e, absoluteCoef: (parseFloat(e.relativeCoef)*10).toFixed(1)}}));
+        }
+
     }, [rows])
 
     useEffect(()=>{

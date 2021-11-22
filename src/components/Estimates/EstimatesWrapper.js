@@ -4,8 +4,9 @@ import Stack from '@mui/material/Stack';
 import UserEstimates from './UserEstimates';
 import EveryoneEstimates from './EveryoneEstimates';
 
-const EstimatesWrapper = ({setEstimates}) => {
+const EstimatesWrapper = ({ setEstimates }) => {
     const [currentlyShowing, setCurrentlyShowing] = useState(0);
+    const [userAverages, setUserAverages] = useState(new Array(10).fill(0));
 
     return (<div>
         <hr />
@@ -20,12 +21,12 @@ const EstimatesWrapper = ({setEstimates}) => {
         </Stack>
         <hr />
         <div style={{ display: currentlyShowing == 0 ? '' : 'none' }} >
-            <UserEstimates />
+            <UserEstimates setUserAverages={setUserAverages} />
         </div>
 
 
         <div style={{ display: currentlyShowing == 1 ? '' : 'none' }}>
-            <EveryoneEstimates setEstimates={setEstimates}/>
+            <EveryoneEstimates setEstimates={setEstimates} userAverages={userAverages}/>
         </div>
 
     </div>);

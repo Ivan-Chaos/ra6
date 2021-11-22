@@ -16,7 +16,7 @@ const columns = [
     { key: 'pers10', name: 'Користувач 10', editor: TextEditor}
 ];
 
-const UserEstimates = () => {
+const UserEstimates = ({setUserAverages}) => {
     
     const [rows, setRows] = useState([
         { id: 1, criteria: 'Точність управління та обчислень', pers1: 1, pers2: 2, pers3: 3, pers4: 4, pers5: 5, pers6: 6, pers7: 7, pers8: 8, pers9: 9, pers10: 10},
@@ -29,8 +29,19 @@ const UserEstimates = () => {
         { id: 8, criteria: 'Відповідність чинним стандартам', pers1: 1, pers2: 2, pers3: 3, pers4: 4, pers5: 5, pers6: 6, pers7: 7, pers8: 8, pers9: 9, pers10: 10},
         { id: 9, criteria: 'Переносність між програнмими(апаратними) засобами', pers1: 1, pers2: 2, pers3: 3, pers4: 4, pers5: 5, pers6: 6, pers7: 7, pers8: 8, pers9: 9, pers10: 10},
         { id: 10, criteria: 'Зручність навчання', pers1: 1, pers2: 2, pers3: 3, pers4: 4, pers5: 5, pers6: 6, pers7: 7, pers8: 8, pers9: 9, pers10: 10},
-
     ]);
+
+    useEffect(()=>{
+        let tempglo = []; 
+        rows.forEach((e)=>{
+            let temp =0;
+            for(let i=0; i<10; i++){
+                temp+=parseFloat(e['pers'+(i+1)]);
+            }
+            tempglo.push(temp/10);
+        });
+        setUserAverages([...tempglo]);
+    }, [rows])
 
     function rowKeyGetter(row) {
         return row.id;

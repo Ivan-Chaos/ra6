@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import WeightCoefsWrapper from './components/weightCoefs/WeightCoefsWrapper';
 import EstimatesWrapper from './components/Estimates/EstimatesWrapper';
 import WeightedEstimates from './components/WeightedEstimates/WeightedEstimates';
+import DiagramsWrapper from './components/DiagramPage/DiagramsWrapper';
 
 function App() {
     let settings = {
@@ -20,7 +21,7 @@ function App() {
 
     const [estimates, setEstimates] = useState();
     const [weights, setWeights] = useState();
-    const [weightCoefs, setWeightCoefs] = useState();
+    const [weightCoefs, setWeightCoefs] = useState(undefined);
 
     return (
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
@@ -40,10 +41,10 @@ function App() {
                 </div>
 
                 <div>
-                    <h1>Діагарми</h1>
-
+                    <h1>Діаграми</h1>
+                    <DiagramsWrapper weights={weights} estimates={estimates} weightCoefs={weightCoefs} />
                 </div>
-
+                
             </Slider>
 
         </div>

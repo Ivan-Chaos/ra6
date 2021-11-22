@@ -48,11 +48,10 @@ const WeightedEstimates = ({ weights, estimates, weightCoefs }) => {
                 + parseFloat(rows[11].potentialUsers);
 
             let weightCoefsSum = 
-            weightCoefs[0].relativeCoef
-            +weightCoefs[1].relativeCoef
-            +weightCoefs[2].relativeCoef
-            +weightCoefs[3].relativeCoef;
-
+            parseFloat(weightCoefs[0].relativeCoef)
+            +parseFloat(weightCoefs[1].relativeCoef)
+            +parseFloat(weightCoefs[2].relativeCoef)
+            +parseFloat(weightCoefs[3].relativeCoef);
             const summaryRow = {
                 id: 'total_0',
                 integral: (avgWeigthed/weightCoefsSum).toFixed(4)
@@ -149,13 +148,13 @@ const WeightedEstimates = ({ weights, estimates, weightCoefs }) => {
         return row.id;
     }
 
-    return (<div>
+    return (<div style={{height: '75vh'}}>
         <DataGrid
             columns={columns}
             rows={rows}
             rowKeyGetter={rowKeyGetter}
             onRowsChange={setRows}
-            style={{ height: '27.5em' }}
+            style={{ height: '35.2em' }}
             summaryRows={summaryRows}
         />
     </div>);

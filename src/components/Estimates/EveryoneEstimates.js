@@ -17,16 +17,16 @@ const EveryoneEstimates = ({setEstimates, userAverages}) => {
 
 
     const [rows, setRows] = useState([
-        { id: 1, criteria: 'Точність управління та обчислень', areaExperts: 4, useabilityExperts: 5, devExperts: 6, potentialUsers: userAverages[0] },
-        { id: 2, criteria: 'Ступінь стандартонсті інтерфейсів', areaExperts: 4, useabilityExperts: 5, devExperts: 6, potentialUsers: userAverages[1] },
-        { id: 3, criteria: 'Функціональна повнота', areaExperts: 4, useabilityExperts: 5, devExperts: 6, potentialUsers: userAverages[2] },
-        { id: 4, criteria: 'Стійкість до помилок', areaExperts: 4, useabilityExperts: 5, devExperts: 6, potentialUsers: userAverages[3] },
-        { id: 5, criteria: 'Можливість розширення', areaExperts: 4, useabilityExperts: 5, devExperts: 6, potentialUsers: userAverages[4] },
-        { id: 6, criteria: 'Зручність роботи', areaExperts: 4, useabilityExperts: 5, devExperts: 6, potentialUsers: userAverages[5] },
-        { id: 7, criteria: 'Простота роботи', areaExperts: 4, useabilityExperts: 5, devExperts: 6, potentialUsers: userAverages[6] },
-        { id: 8, criteria: 'Відповідність чинним стандартам', areaExperts: 4, useabilityExperts: 5, devExperts: 6, potentialUsers: userAverages[7] },
-        { id: 9, criteria: 'Переносність між програнмими(апаратними) засобами', areaExperts: 4, useabilityExperts: 5, devExperts: 6, potentialUsers: userAverages[8] },
-        { id: 10, criteria: 'Зручність навчання', areaExperts: 4, useabilityExperts: 5, devExperts: 6, potentialUsers: userAverages[9] },
+        { id: 1, criteria: 'Точність управління та обчислень', areaExperts: 10, useabilityExperts: 9, devExperts: 10, potentialUsers: userAverages[0] },
+        { id: 2, criteria: 'Ступінь стандартонсті інтерфейсів', areaExperts: 9, useabilityExperts: 8, devExperts: 8, potentialUsers: userAverages[1] },
+        { id: 3, criteria: 'Функціональна повнота', areaExperts: 9, useabilityExperts:7, devExperts: 9, potentialUsers: userAverages[2] },
+        { id: 4, criteria: 'Стійкість до помилок', areaExperts: 6, useabilityExperts: 5, devExperts: 8, potentialUsers: userAverages[3] },
+        { id: 5, criteria: 'Можливість розширення', areaExperts: 7, useabilityExperts: 5, devExperts: 8, potentialUsers: userAverages[4] },
+        { id: 6, criteria: 'Зручність роботи', areaExperts: 9, useabilityExperts: 7, devExperts: 8, potentialUsers: userAverages[5] },
+        { id: 7, criteria: 'Простота роботи', areaExperts: 10, useabilityExperts: 9, devExperts: 10, potentialUsers: userAverages[6] },
+        { id: 8, criteria: 'Відповідність чинним стандартам', areaExperts: 6, useabilityExperts: 8, devExperts: 7, potentialUsers: userAverages[7] },
+        { id: 9, criteria: 'Переносність між програнмими(апаратними) засобами', areaExperts: 9, useabilityExperts: 7, devExperts: 6, potentialUsers: userAverages[8] },
+        { id: 10, criteria: 'Зручність навчання', areaExperts: 6, useabilityExperts: 5, devExperts: 9, potentialUsers: userAverages[9] },
 
     ]);
 

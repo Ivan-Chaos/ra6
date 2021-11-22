@@ -4,7 +4,7 @@ import Stack from '@mui/material/Stack';
 import UserEstimates from './UserEstimates';
 import EveryoneEstimates from './EveryoneEstimates';
 
-const EstimatesWrapper = () => {
+const EstimatesWrapper = ({setEstimates}) => {
     const [currentlyShowing, setCurrentlyShowing] = useState(0);
 
     return (<div>
@@ -25,7 +25,7 @@ const EstimatesWrapper = () => {
 
 
         <div style={{ display: currentlyShowing == 1 ? '' : 'none' }}>
-            <EveryoneEstimates />
+            <EveryoneEstimates setEstimates={setEstimates}/>
         </div>
 
     </div>);

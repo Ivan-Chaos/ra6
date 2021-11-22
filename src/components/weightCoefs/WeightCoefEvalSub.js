@@ -10,7 +10,7 @@ const columns = [
     { key: 'potentialUsers', name: 'Потенційні користувачі', editor: TextEditor }
 ];
 
-const WeightCoefEvalSub = () => {
+const WeightCoefEvalSub = ({setWeights}) => {
     const [userData, setUserData] = useState(new Array(47).fill(new Array(10).fill(0)));
 
     const [er, setEr] = useState(new Array(47).fill(0));
@@ -31,7 +31,7 @@ const WeightCoefEvalSub = () => {
     ]);
 
     useEffect(()=>{
-        
+        setWeights([...rows]);
     }, [rows])
 
     useEffect(()=>{

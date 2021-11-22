@@ -7,7 +7,7 @@ const columns = [
     { key: 'relativeCoef', name: 'Відносний коефіцієнт', editor: TextEditor }
 ];
 
-const ImportanceCoef = () => {
+const ImportanceCoef = ({setWeightCoefs}) => {
     const [userData, setUserData] = useState(new Array(47).fill(new Array(10).fill(0)));
 
     const [er, setEr] = useState(new Array(47).fill(0));
@@ -21,7 +21,7 @@ const ImportanceCoef = () => {
     ]);
 
     useEffect(()=>{
-        
+        setWeightCoefs([...rows]);
     }, [rows])
 
     useEffect(()=>{

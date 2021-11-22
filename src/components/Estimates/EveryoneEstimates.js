@@ -10,7 +10,7 @@ const columns = [
     { key: 'potentialUsers', name: 'Потенційні користувачі', editor: TextEditor }
 ];
 
-const EveryoneEstimates = () => {
+const EveryoneEstimates = ({setEstimates}) => {
     const [userData, setUserData] = useState(new Array(47).fill(new Array(10).fill(0)));
 
     const [er, setEr] = useState(new Array(47).fill(0));
@@ -31,7 +31,7 @@ const EveryoneEstimates = () => {
     ]);
 
     useEffect(() => {
-
+        setEstimates([...rows]);
     }, [rows])
 
     useEffect(() => {
@@ -49,10 +49,6 @@ const EveryoneEstimates = () => {
         setRows(tempRows);*/
     }, [userData])
 
-
-    useEffect(() => {
-        console.log("🚀 ~ file: RiskChanceExperts.js ~ line 124 ~ RiskChanceExperts ~ er", er)
-    }, [er])
 
     function rowKeyGetter(row) {
         return row.id;
